@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %} {% load static %} {% block content %}
+<div>
+  {% for recette in recettes %}
+  <article>
+    <header>
+      <img
+        class="imgRecette"
+        src="{% static 'blog/img/' %}{{recette.photo}}"
+        width="300px"
+        height="242px"
+        alt="{recette.nom}"
+      />
+      <a href="recette/idRecette">
+        <h1 class="titreRecette">{{recette.nom}}}</h1>
+      </a>
+      <time> {{recette.date_parution}} </time>
+    </header>
+    <p>{{recette.description}}</p>
+  </article>
+  {% endfor % }
+</div>
+{% endblock %}
